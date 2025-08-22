@@ -1,122 +1,118 @@
-# 🧾 Merchant KYC Analysis
+# 🏡 House Price Prediction System
 
-A full-stack compliance analytics solution designed to evaluate merchant onboarding, KYC verification, and risk profiling. This project analyzes **100,000+ merchant records** to empower financial institutions and compliance teams with predictive insights and interactive dashboards for fraud prevention and regulatory adherence.
+A full-stack machine learning solution designed to estimate house prices based on regional demographics and housing attributes. This project analyzes **5,000+ housing records** to empower real estate firms, property investors, and financial analysts with predictive insights and interactive dashboards for valuation, investment, and underwriting decisions.
 
 ---
 
 ## 🚗 GitHub Project Repository  
-🔗 [Click to view Merchant-KYC-analysis](https://github.com/aneshraj-d96/Merchant-KYC-analysis)
+🔗 [Click to view House-Price-Prediction](https://github.com/aneshraj-d96/House-Price-Prediction)
 
 ---
 
 ## 🧠 Project Overview
 
-KYC compliance is a cornerstone of financial integrity and fraud mitigation. This project delivers an end-to-end analytics platform that enables:
+Accurate house price prediction is essential for real estate valuation, investment planning, and mortgage risk assessment. This project delivers an end-to-end analytics platform that enables:
 
-- 📊 Verification tracking and document validation  
-- 🛡️ Risk profiling and review prediction  
-- 📅 Onboarding timeline analysis  
-- 📈 Executive dashboards for compliance monitoring  
+- 🏠 Property-level price estimation  
+- 📊 Feature impact analysis  
+- 🗺️ Regional pricing visualization  
+- 📈 Dashboard-driven insights for stakeholders  
 
 ---
 
 ## 🎯 Key Objectives
 
-- Clean and preprocess merchant KYC data  
-- Engineer features for review status and risk modeling  
-- Build classification models to predict compliance outcomes  
-- Deploy interactive dashboards for stakeholder decision-making  
+- Clean and preprocess housing and demographic data  
+- Engineer features for regression modeling and dashboarding  
+- Build predictive models to estimate house prices  
+- Deploy interactive dashboards for business decision-making  
 
 ---
 
 ## 📁 Project Structure
 
-| File Name                        | Description                                                                 |
-|----------------------------------|-----------------------------------------------------------------------------|
-| `merchant_kyc_100000.csv`        | Raw dataset with merchant KYC records                                      |
-| `cleaned_merchant_kyc.csv`       | Preprocessed dataset with feature engineering                              |
-| `kyc_review_model.pkl`           | Trained model for predicting review status                                 |
-| `merchant_kyc.sql`               | SQL queries for data extraction and filtering                              |
-| `sqlconnect.py`                  | Python script for SQL database connection                                  |
-| `app.py`                         | Streamlit app for dashboard deployment                                     |
-| `merchant_kyc.ipynb`             | Jupyter notebook with EDA, modeling, and insights                          |
-| `merchant_kyc_dashboard`         | Power BI or Streamlit dashboard visualizing compliance metrics             |
+| File Name                          | Description                                                                 |
+|-----------------------------------|-----------------------------------------------------------------------------|
+| `house_price_prediction.csv`      | Raw dataset with housing and demographic info                              |
+| `cleaned_house_price_prediction.csv` | Preprocessed dataset with feature engineering                            |
+| `house_price_model.pkl`           | Trained regression model for price prediction                              |
+| `house_price.sql`                 | SQL queries for data extraction and filtering                              |
+| `sqlconnect.py`                   | Python script for SQL database connection                                  |
+| `app.py`                          | Streamlit app for dashboard deployment                                     |
+| `house_price_prediction.ipynb`    | Jupyter notebook with EDA, modeling, and insights                          |
+| `house_price_prediction dashboard`| Power BI or Streamlit dashboard visualizing pricing trends                 |
 
 ---
 
 ## 🧹 Data Preprocessing
 
-- Verified PAN and GST formats  
-- Encoded categorical features (`address_proof_type`, `kyc_status`, `risk_level`)  
-- Converted `onboarding_date` to datetime format  
-- Normalized `compliance_score`  
-- Removed duplicates and ensured type consistency  
+- Imputed missing values in `avg_income`, `avg_population`, `avg_area_house_age`  
+- Normalized continuous variables (`avg_income`, `avg_population`, `avg_area_num_rooms`)  
+- Removed outliers in `price` and `avg_area_num_rooms`  
+- Verified data types and optimized memory usage  
+- Optional enhancement: converted `address` to geolocation features  
 
 ---
 
 ## 📈 Exploratory Data Analysis
 
-- 📊 Distribution of KYC status across address proof types  
-- 🛡️ Compliance score trends by risk level  
-- 🔍 Review status breakdown by document validity  
-- 📅 Onboarding timeline and volume analysis  
-- 🧠 Correlation matrix of compliance features  
+- 📊 Price distribution across income brackets and population density  
+- 🛏️ Impact of house age and bedroom count on pricing  
+- 🧠 Correlation matrix of housing features vs. price  
+- 🗺️ Regional pricing trends based on address clustering  
 
 ---
 
 ## 🤖 Modeling Approach
 
-- **Target Variable**: `review_status`  
-- **Algorithms Used**: Logistic Regression, Random Forest, XGBoost  
-- **Evaluation Metrics**: Accuracy, Precision, Recall, F1 Score  
-- **Top Features**: `compliance_score`, `kyc_status`, `address_proof_valid`, `risk_level`  
+- **Target Variable**: `price`  
+- **Algorithms Used**: Linear Regression, Random Forest Regressor, XGBoost Regressor  
+- **Evaluation Metrics**: MAE, RMSE, R² Score  
+- **Top Features**: `avg_income`, `avg_area_num_rooms`, `avg_population`, `avg_bedrooms`  
 
 ---
 
 ## 📊 Dashboard Overview
 
 ### 🔷 Power BI Dashboard  
-Visualizes KYC performance and risk segmentation:
+Visualizes pricing trends and feature impact:
 
-- 🧾 KYC verification summary  
-- 📊 Compliance score distribution  
-- 🛡️ Risk level segmentation  
-- 📅 Onboarding trends and review status  
-- 🔍 Document validity and fraud flags  
+- 🗺️ Regional price heatmaps  
+- 📈 Income vs. price trend analysis  
+- 🛏️ Bedroom and room count impact visualization  
+- 📊 Feature distribution and correlation plots  
 
-![Power BI Preview](https://image2url.com/images/1755867898328-66769c39-e4fc-4b4e-b469-948fb669e957.png)  
-![Power BI Preview](https://image2url.com/images/1755867929068-e8e10781-15fb-42c4-bb6b-01c858d29410.png)
+![Power BI Preview](https://image2url.com/images/1755869230623-06f9a99d-3e46-4d3c-86ab-486a0d91d8f1.png)  
+![Power BI Preview](https://image2url.com/images/1755869310303-17c871c7-379f-49f5-a463-355fda523777.png)
 
 ---
 
 ### 🟢 Streamlit App  
-Interactive dashboard for real-time compliance insights:
+Interactive dashboard for real-time price prediction:
 
-- 📈 Predict review status based on merchant attributes  
-- 📊 Feature importance visualization  
-- 🧾 KYC status and document validity filters  
-- 🛡️ Risk profiling and fraud flagging  
+- 🏠 House-level price prediction tool  
+- 📈 Feature importance visualization  
+- 📊 Dynamic filtering by region and housing attributes  
 
-![Streamlit Preview](https://image2url.com/images/1755867951222-2c235fd1-2c48-4208-bd6f-edd2eb9290ac.png)  
-![Streamlit Preview](https://image2url.com/images/1755867988912-f7be9b2e-1bbb-4f0d-b6be-2e8894288272.png)
+![Streamlit Preview](https://image2url.com/images/1755869338298-5493fa5a-52bd-4ce1-94a8-b4c74cbf1723.png)
 
 ---
 
 ## 🚀 Deployment
 
-- Model serialized with `joblib` as `kyc_review_model.pkl`  
+- Model serialized with `joblib` as `house_price_model.pkl`  
 - Dashboard deployed via **Streamlit Cloud**  
-- SQL integration for dynamic merchant querying  
+- SQL integration for dynamic data updates  
 - Git LFS used for large file management  
 
 ---
 
 ## 🧠 Business Impact
 
-- Flags high-risk merchants during onboarding  
-- Improves compliance tracking and audit readiness  
-- Reduces manual review workload with predictive insights  
-- Enhances fraud detection and regulatory reporting  
+- Enables accurate property valuation for buyers and sellers  
+- Supports real estate investment decisions with data-driven insights  
+- Improves pricing transparency across regions  
+- Enhances mortgage risk assessment and underwriting  
 
 ---
 
@@ -131,15 +127,15 @@ Interactive dashboard for real-time compliance insights:
 
 ## 📌 Future Enhancements
 
-- Integrate real-time document verification APIs  
-- Add explainability via SHAP for compliance decisions  
-- Enable user-uploaded KYC records for review simulation  
-- Expand dashboard to include fraud scoring and alerts  
+- Integrate geolocation APIs for address-based clustering  
+- Add explainability via SHAP for feature impact  
+- Enable user-uploaded property data for prediction  
+- Expand dashboard to include rental price forecasting  
 
 ---
 
 ## 👤 Author
 
 **Anesh Raj**  
- 
+  
 🔗 [GitHub Profile](https://github.com/aneshraj-d96)
